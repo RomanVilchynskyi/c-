@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <fstream>
 
 using namespace std;
 
@@ -187,6 +188,32 @@ struct Library {
         }
     }
 
+    void saveToFile(const char* filename) {
+        ofstream file(filename);
+        if (!file.is_open()) {
+            cout << "Error opening file!" << endl;
+            return;
+        }
+
+        file << bookCount << endl;
+        for (int i = 0; i < bookCount; i++) {
+            file << books[i].title << " , " << books[i].author << " , " << books[i].category << endl;
+        }
+
+        file << journalCount << endl;
+        for (int i = 0; i < journalCount; i++) {
+            file << journals[i].title << " , " << journals[i].year << endl;
+        }
+
+        file << newspaperCount << endl;
+        for (int i = 0; i < newspaperCount; i++) {
+            file << newspapers[i].title << " , " << newspapers[i].year << endl;
+        }
+
+        file.close();
+        cout << "Library data saved to " << filename << endl;
+    }
+
     void selectJournalsByYear(int year) const {
         bool found = false;
         for (int i = 0; i < journalCount; i++) {
@@ -256,6 +283,7 @@ int main() {
         cout << "11. Select Books by Category\n";
         cout << "12. Select Journals by Year\n";
         cout << "13. Count Books by Category\n";
+        cout << "14. Save to File\n";
         cout << "0. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -372,6 +400,10 @@ int main() {
             cin.getline(category, 50);
             int count = library.countBooksByCategory(category);
             cout << "Number of books in category '" << category << "': " << count << endl;
+            break;
+        }
+        case 14: {
+            library.saveToFile("library_data.txt"); 
             break;
         }
         case 0:

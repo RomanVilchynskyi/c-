@@ -1,0 +1,19 @@
+
+1984,George Orwell,Dystopian
+To Kill a Mockingbird,Harper Lee,Fiction
+Pride and Prejudice,Jane Austen,Romance
+The Great Gatsby,F. Scott Fitzgerald,Classic
+Moby-Dick,Herman Melville,Adventure
+War and Peace,Leo Tolstoy,Historical
+The Catcher in the Rye,J.D. Salinger,Fiction
+Brave New World,Aldous Huxley,Dystopian
+
+Nature,2021
+Science,2022
+The Lancet,2023
+New England Journal of Medicine,2023
+
+The New York Times,2023
+The Guardian,2023
+The Wall Street Journal,2022
+The Washington Post,2023
